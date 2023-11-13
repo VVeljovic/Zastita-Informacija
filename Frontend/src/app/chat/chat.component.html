@@ -1,0 +1,17 @@
+<body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat</h2>
+      </div>
+      <form #form="ngForm"(ngSubmit)="onSubmit()">
+      <div class="chat-messages" id="chat-messages">
+        <p *ngFor="let message of messages">{{message.text}}</p>
+       
+      </div>
+      <div class="chat-input">
+        <input ngModel type="text" name="message" id="message" placeholder="Type your message">
+        <button [disabled]="!form.valid"type = "submit">Send</button>
+      </div>
+    </form>
+    </div>
+    </body>
